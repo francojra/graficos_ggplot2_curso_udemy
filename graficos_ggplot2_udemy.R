@@ -14,3 +14,28 @@
 
 iris
 
+# Gráficos com uma dimensão ----------------------------------------------------------------------------------------------------------------
+
+ggplot(iris, aes(Petal.Length)) +
+  geom_bar() # Gráfico de barras
+
+ggplot(iris, aes(Petal.Length)) +
+  geom_histogram() # Gráfico de histograma
+
+ggplot(iris, aes(Petal.Length)) +
+  geom_histogram(binwidth = 0.1)
+
+ggplot(iris, aes(Petal.Length)) +
+  geom_density() # Gráfico de densidade (estimativa da densidade de Kernel)
+
+ggplot(iris, aes(Petal.Length)) +
+  geom_freqpoly()
+
+ggplot(iris, aes(Petal.Length)) +
+  geom_freqpoly(binwidth = 0.1)
+
+ggplot(iris, aes(Petal.Length)) +
+  geom_dotplot()
+
+ggplot(iris, aes(Petal.Length)) +
+  geom_dotplot(binwidth = 0.1)
