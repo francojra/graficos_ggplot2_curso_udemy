@@ -65,3 +65,5 @@ g + geom_histogram(aes(Petal.Length, fill = Species), binwidth = 0.1, alpha = 0.
 g + geom_dotplot(aes(Petal.Length, fill = Species), binwidth = 0.1, alpha = 0.3) +
   geom_freqpoly(aes(Petal.Length, colour = Species), binwidth = 0.1, size = 0.8)
   
+g + geom_histogram(aes(Petal.Length, fill = Species), binwidth = 0.1, alpha = 0.2, color = "black") +
+  geom_dotplot(aes(Petal.Length, fill = Species), binwidth = 0.1)
