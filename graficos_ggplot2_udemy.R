@@ -53,3 +53,15 @@ g + geom_density(aes(Petal.Length, fill = Species), alpha = 0.3, color = "black"
 g + geom_density(aes(Petal.Length, ..count.., fill = Species), alpha = 0.3, color = "black")
 
 g + geom_freqpoly(aes(Petal.Length, colour = Species), binwidth = 0.1, show.legend = TRUE)
+
+# Combinando gráficos ----------------------------------------------------------------------------------------------------------------------
+
+g + geom_histogram(aes(Petal.Length, fill = Species), binwidth = 0.1, alpha = 0.3, color = "black") +
+  geom_density(aes(Petal.Length, 0.1*..count.., fill = Species), alpha = 0.5, color = "black")
+
+g + geom_histogram(aes(Petal.Length, fill = Species), binwidth = 0.1, alpha = 0.3) +
+  geom_freqpoly(aes(Petal.Length, colour = Species), binwidth = 0.1, size = 0.8)
+
+g + geom_dotplot(aes(Petal.Length, fill = Species), binwidth = 0.1, alpha = 0.3) +
+  geom_freqpoly(aes(Petal.Length, colour = Species), binwidth = 0.1, size = 0.8)
+  
