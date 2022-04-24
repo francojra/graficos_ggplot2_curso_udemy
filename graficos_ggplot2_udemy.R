@@ -39,3 +39,17 @@ ggplot(iris, aes(Petal.Length)) +
 
 ggplot(iris, aes(Petal.Length)) +
   geom_dotplot(binwidth = 0.1)
+
+# Adicionando complexidade aos gráficos ----------------------------------------------------------------------------------------------------
+
+g <- ggplot(iris)
+
+g + geom_histogram(aes(Petal.Length, fill = Species), binwidth = 0.1, alpha = 0.3, color = "black")
+
+### O alpha adiciona transparência a cor do preenchimento do gráfico;
+### A cor no caso dos gráficos de barras e histogramas se refere a cor do contorno.
+
+g + geom_density(aes(Petal.Length, fill = Species), alpha = 0.3, color = "black")
+g + geom_density(aes(Petal.Length, ..count.., fill = Species), alpha = 0.3, color = "black")
+
+g + geom_freqpoly(aes(Petal.Length, colour = Species), binwidth = 0.1, show.legend = TRUE)
