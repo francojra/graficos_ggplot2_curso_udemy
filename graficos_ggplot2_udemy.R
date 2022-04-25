@@ -95,3 +95,9 @@ g + geom_errorbar(aes(x = Species, ymin = media - desvio, ymax = media + desvio)
 g + geom_errorbarh(aes(y = Species, xmin = media - desvio, xmax = media + desvio))
 g + geom_pointrange(aes(x = Species, y = media, ymin = media - desvio, ymax = media + desvio, 
                         colour = Species), size = 3, show.legend = FALSE)
+
+# Combinando gráficos ----------------------------------------------------------------------------------------------------------------------
+
+g + geom_col(aes(x = Species, y = media, fill = Species)) +
+    geom_errorbar(aes(x = Species, ymin = media - desvio, ymax = media + desvio), 
+                  linetype = "longdash")
