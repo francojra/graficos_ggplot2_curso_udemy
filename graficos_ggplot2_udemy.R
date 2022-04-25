@@ -120,3 +120,17 @@ g2 + geom_line(aes(x = Petal.Length, y = Petal.Width))
 g2 + geom_line(aes(x = Petal.Length, y = Petal.Width)) +
      geom_point(aes(x = Petal.Length, y = Petal.Width, col = Species))
 
+# Gráfico time series ----------------------------------------------------------------------------------------------------------------------
+
+### São gráficos que apresentam pares de números (x, y) e, portanto, podem ser usados para
+### representar linhas.
+
+view(economics)
+
+j <- ggplot(economics)
+
+j + geom_line(aes(date, unemploy))
+j + geom_area(aes(date, unemploy))
+j + geom_line(aes(date, pop))
+j + geom_point(aes(date, pop), size = 0.7) 
+
