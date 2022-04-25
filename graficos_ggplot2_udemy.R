@@ -110,3 +110,13 @@ g2 + geom_point(aes(x = Petal.Length, y = Petal.Width))
 g2 + geom_point(aes(x = Petal.Length, y = Petal.Width, color = Species))
 g2 + geom_point(aes(x = Petal.Length, y = Petal.Width, shape = Species))
 g2 + geom_point(aes(x = Petal.Length, y = Petal.Width, color = Species, shape = Species))
+
+# Outros gráficos --------------------------------------------------------------------------------------------------------------------------
+
+g2 + geom_jitter(aes(x = Petal.Length, y = Petal.Width)) # Pontos com posição aleatória
+g2 + geom_point(aes(x = Petal.Length, y = Petal.Width), col = "red") +
+     geom_jitter(aes(x = Petal.Length, y = Petal.Width))
+g2 + geom_line(aes(x = Petal.Length, y = Petal.Width))
+g2 + geom_line(aes(x = Petal.Length, y = Petal.Width)) +
+     geom_point(aes(x = Petal.Length, y = Petal.Width, col = Species))
+
