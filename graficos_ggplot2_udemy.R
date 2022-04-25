@@ -101,3 +101,12 @@ g + geom_pointrange(aes(x = Species, y = media, ymin = media - desvio, ymax = me
 g + geom_col(aes(x = Species, y = media, fill = Species)) +
     geom_errorbar(aes(x = Species, ymin = media - desvio, ymax = media + desvio), 
                   linetype = "longdash")
+
+# Parâmetros estéticos do ggplot2 ----------------------------------------------------------------------------------------------------------
+
+g2 <- ggplot(iris)
+
+g2 + geom_point(aes(x = Petal.Length, y = Petal.Width))
+g2 + geom_point(aes(x = Petal.Length, y = Petal.Width, color = Species))
+g2 + geom_point(aes(x = Petal.Length, y = Petal.Width, shape = Species))
+g2 + geom_point(aes(x = Petal.Length, y = Petal.Width, color = Species, shape = Species))
