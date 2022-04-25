@@ -10,8 +10,9 @@
 ### geom_* +
 ### Outras camadas
 
-# Carregar banco de dados ------------------------------------------------------------------------------------------------------------------
+# Carregar pacote e banco de dados ------------------------------------------------------------------------------------------------------------------
 
+library(tidyverse)
 iris
 
 # Gráficos com uma dimensão ----------------------------------------------------------------------------------------------------------------
@@ -67,3 +68,20 @@ g + geom_dotplot(aes(Petal.Length, fill = Species), binwidth = 0.1, alpha = 0.3)
   
 g + geom_histogram(aes(Petal.Length, fill = Species), binwidth = 0.1, alpha = 0.2, color = "black") +
   geom_dotplot(aes(Petal.Length, fill = Species), binwidth = 0.1)
+
+# Gráficos com duas dimensões --------------------------------------------------------------------------------------------------------------
+
+### Calcular média e desvio padrão
+
+graf <- iris %>%
+  group_by(Species) %>%
+  summarise(media = mean(Sepal.Length), desvio = sd(Sepal.Length))
+view(graf)
+
+### Gráfico de barra e coluna
+
+g <- ggplot(graf)
+g + geom_col(aes(x = Species, y = media))
+
+g1 <- ggplot(iris)
+g1 + geom_bar(aes(x = Sepal.Length)) # Gráfico com barras de frequêcia
