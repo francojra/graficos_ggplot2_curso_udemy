@@ -171,6 +171,9 @@ library(ggthemes)
 g + theme_base()
 g + theme_calc()
 g + theme_economist()
+g + theme_wsj()
+g + theme_gdocs()
 
 g + theme_economist() +
   scale_color_economist()
+
