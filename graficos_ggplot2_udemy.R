@@ -220,3 +220,23 @@ g + geom_boxplot(aes(class, hwy)) +
 g + geom_violin(aes(class, hwy)) +
   geom_jitter(aes(class, hwy)) +
   coord_flip()
+
+# Gráfico de pizza -------------------------------------------------------------------------------------------------------------------------
+
+### O gráfico de pizza no ggplot2 é uma variação do gráfico de barras/colunas.
+
+df <- data.frame(grupo = c("Homem", "Mulher", "Criança"),
+                 valor = c(25, 25, 50))
+
+ggplot(df) +
+  geom_col(aes(x = 1, y = valor, fill = grupo))
+
+ggplot(df) +
+  geom_col(aes(x = 1, y = valor, fill = grupo)) +
+  coord_polar(theta = "y")
+
+ggplot(df) +
+  geom_col(aes(x = 1, y = valor, fill = grupo)) +
+  coord_polar(theta = "y") +
+  theme(axis.title.y = element_blank(),axis.text.y = element_blank(),
+        axis.ticks.y = element_blank())
