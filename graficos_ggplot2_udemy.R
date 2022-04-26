@@ -150,7 +150,7 @@ g1 <- ggplot(iris) +
   geom_bar(aes(Petal.Length, fill = Species), alpha = 0.7) +
   labs(title = "Frequência de cada valor de Petal.Lenght", x = "Valores de Petal.Lenght",
        y = "Frequência/Contagem") +
-  scale_fill_manual(name = "Espécies", labels = c("Setosa", "Versocolor", "Virginica"),
+  scale_fill_manual(name = "Espécies", labels = c("Setosa", "Versicolor", "Virginica"),
                      values = c("goldenrod2", "steelblue", "green4"))
 g1
 
@@ -289,4 +289,7 @@ g + geom_bar(aes(cut), position = "dodge")
 
 g + geom_boxplot(aes(cut, price))
 
+## Gráfico de pontos
+
+g + geom_point(aes(carat, price), col = "steelblue", size = 1.6, alpha = 0.4)
                  
