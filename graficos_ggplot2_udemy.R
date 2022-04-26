@@ -259,3 +259,27 @@ g + geom_boxplot(aes(class, hwy)) +
 
 g + geom_boxplot(aes(class, hwy)) +
   facet_grid(drv~year)
+
+# Exercícios -------------------------------------------------------------------------------------------------------------------------------
+
+## Carregar dados
+
+diamonds
+view(diamonds)
+
+## Gráficos de histogramas e densidade
+
+g <- ggplot(diamonds)
+
+g + geom_histogram(aes(depth))
+g + geom_histogram(aes(price))
+g + geom_histogram(aes(carat))
+
+g + geom_density(aes(depth))
+g + geom_density(aes(price))
+g + geom_density(aes(carat))
+
+## Gráfico de barras
+
+g + geom_bar(aes(cut))
+g + geom_col(aes(cut, price))
