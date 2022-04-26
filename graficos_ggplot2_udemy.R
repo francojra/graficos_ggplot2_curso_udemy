@@ -240,3 +240,22 @@ ggplot(df) +
   coord_polar(theta = "y") +
   theme(axis.title.y = element_blank(),axis.text.y = element_blank(),
         axis.ticks.y = element_blank())
+
+# Facetas ----------------------------------------------------------------------------------------------------------------------------------
+
+### facet_grid(linha~coluna)
+
+g + geom_boxplot(aes(class, hwy)) +
+  facet_grid(~drv) # Tipos de tração: dianteira (f), traseira (r), e 4 x 4
+
+g + geom_boxplot(aes(class, hwy)) +
+  facet_grid(drv~.)
+
+g + geom_boxplot(aes(class, hwy)) +
+  facet_grid(year~.)
+
+g + geom_boxplot(aes(class, hwy)) +
+  facet_grid(year~drv)
+
+g + geom_boxplot(aes(class, hwy)) +
+  facet_grid(drv~year)
