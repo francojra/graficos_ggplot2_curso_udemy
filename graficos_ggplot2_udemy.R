@@ -283,3 +283,10 @@ g + geom_density(aes(carat))
 
 g + geom_bar(aes(cut))
 g + geom_col(aes(cut, price))
+g + geom_bar(aes(cut), position = "dodge")
+
+## Gráfico boxplot
+
+g + geom_boxplot(aes(cut, price))
+
+                 
