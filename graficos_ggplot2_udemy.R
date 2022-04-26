@@ -153,3 +153,15 @@ g1 <- ggplot(iris) +
   scale_fill_manual(name = "Espécies", labels = c("Setosa", "Versocolor", "Virginica"),
                      values = c("goldenrod2", "steelblue", "green4"))
 g1
+
+# Temas ------------------------------------------------------------------------------------------------------------------------------------
+
+g + theme_bw()
+g + theme_classic()
+g + theme_minimal()
+
+g1 + theme_bw()
+g1 + theme_classic()
+g1 + theme_minimal()
+
+library(ggthemes)
