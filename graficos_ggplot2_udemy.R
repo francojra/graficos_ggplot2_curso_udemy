@@ -164,4 +164,13 @@ g1 + theme_bw()
 g1 + theme_classic()
 g1 + theme_minimal()
 
+### Outros temas
+
 library(ggthemes)
+
+g + theme_base()
+g + theme_calc()
+g + theme_economist()
+
+g + theme_economist() +
+  scale_color_economist()
