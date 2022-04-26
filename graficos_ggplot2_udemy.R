@@ -177,3 +177,8 @@ g + theme_gdocs()
 g + theme_economist() +
   scale_color_economist()
 
+g + theme_wsj() +
+  scale_colour_wsj() # Tema Wall street jounal
+
+g + theme_calc() +
+  scale_color_colorblind() # Esquema de cores para daltônicos
