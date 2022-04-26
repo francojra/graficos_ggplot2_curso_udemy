@@ -292,4 +292,18 @@ g + geom_boxplot(aes(cut, price))
 ## Gráfico de pontos
 
 g + geom_point(aes(carat, price), col = "steelblue", size = 1.6, alpha = 0.4)
-                 
+
+## Gráfico pointrange
+
+d <- diamonds %>%
+  group_by(cut) %>%
+  summarise(media = mean(price), desvio = sd(price))
+view(d)
+
+ggplot(d) +
+  geom_pointrange(aes(x = cut, y = media, 
+      ymin = media - desvio, ymax = media + desvio,
+      color = cut), show.legend = FALSE,
+      size = 2.3) +
+  labs(x = "Corte do diamante", y = "Preço ($)") +
+  theme_minimal()
