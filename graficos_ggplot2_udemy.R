@@ -187,3 +187,18 @@ g + theme_calc() +
 
 g + xlim(4, 7) + ylim(1, 3)
 g + xlim(0, 2) + ylim(0, 0.8)
+
+# Gráficos boxplot e violino -------------------------------------------------------------------------------------------------------------------------
+
+view(mpg)
+?mpg
+
+g <- ggplot(mpg)
+
+g + geom_boxplot(aes(class, hwy))
+
+g + geom_boxplot(aes(class, hwy)) +
+  geom_jitter(aes(class, hwy))
+
+g + geom_violin(aes(class, hwy)) +
+  geom_jitter(aes(class, hwy))
