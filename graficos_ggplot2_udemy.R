@@ -147,4 +147,9 @@ g <- ggplot(iris)  +
 g
 
 g1 <- ggplot(iris) +
-  geom_bar(aes(Petal.Length, fill = "Species"))
+  geom_bar(aes(Petal.Length, fill = Species), alpha = 0.7) +
+  labs(title = "Frequência de cada valor de Petal.Lenght", x = "Valores de Petal.Lenght",
+       y = "Frequência/Contagem") +
+  scale_fill_manual(name = "Espécies", labels = c("Setosa", "Versocolor", "Virginica"),
+                     values = c("goldenrod2", "steelblue", "green4"))
+g1
