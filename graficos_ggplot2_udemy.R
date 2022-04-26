@@ -134,3 +134,17 @@ j + geom_area(aes(date, unemploy))
 j + geom_line(aes(date, pop))
 j + geom_point(aes(date, pop), size = 0.7) 
 
+# Adicionando legendas e cores ao gráfico --------------------------------------------------------------------------------------------------
+
+ggplot(iris) +
+  geom_point(aes(Petal.Length, Petal.Width, col = Species))
+
+g <- ggplot(iris)  +
+  geom_point(aes(Petal.Length, Petal.Width, col = Species)) +
+  labs(title = "Comprimento por largura de pétalas", x = "Comprimento", y = "Largura") +
+  scale_color_manual(name = "Espécies", labels = c("Setosa", "Versocolor", "Virginica"),
+                     values = c("cornflowerblue", "blueviolet", "tomato3"))
+g
+
+g1 <- ggplot(iris) +
+  geom_bar(aes(Petal.Length, fill = "Species"))
