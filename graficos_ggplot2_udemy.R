@@ -202,3 +202,21 @@ g + geom_boxplot(aes(class, hwy)) +
 
 g + geom_violin(aes(class, hwy)) +
   geom_jitter(aes(class, hwy))
+
+# Coordenadas cartesianas ------------------------------------------------------------------------------------------------------------------
+
+g + geom_boxplot(aes(class, hwy)) +
+  geom_jitter(aes(class, hwy)) +
+  coord_cartesian(xlim = c(0, 10))
+
+g + geom_violin(aes(class, hwy)) +
+  geom_jitter(aes(class, hwy)) +
+  coord_cartesian(xlim = c(0, 12), ylim = c(-10, 60)) +
+  theme_minimal()
+
+g + geom_boxplot(aes(class, hwy)) +
+  coord_flip()
+
+g + geom_violin(aes(class, hwy)) +
+  geom_jitter(aes(class, hwy)) +
+  coord_flip()
