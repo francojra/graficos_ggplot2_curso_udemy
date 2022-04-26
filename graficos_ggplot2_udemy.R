@@ -175,10 +175,15 @@ g + theme_wsj()
 g + theme_gdocs()
 
 g + theme_economist() +
-  scale_color_economist()
+  scale_color_economist() # Jornal The Economist
 
 g + theme_wsj() +
-  scale_colour_wsj() # Tema Wall street jounal
+  scale_colour_wsj() # Tema Wall street journal
 
 g + theme_calc() +
   scale_color_colorblind() # Esquema de cores para daltônicos
+
+# Zoom no gráfico --------------------------------------------------------------------------------------------------------------------------
+
+g + xlim(4, 7) + ylim(1, 3)
+g + xlim(0, 2) + ylim(0, 0.8)
