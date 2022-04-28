@@ -307,3 +307,23 @@ ggplot(d) +
       size = 2.3) +
   labs(x = "Corte do diamante", y = "Preço ($)") +
   theme_minimal()
+
+# Gráfico de bolhas ------------------------------------------------------------------------------------------------------------------------
+
+### Também é conhecido como buble chart.
+### Apresenta duas variáveis numéricas para o eixos x e y.
+### Uma variável numérica para o tamanho das bolhas.
+### Uma variável categórica para a cor das bolhas (opcional).
+### Uma variável categórica para o formato das bolhas (opcional).
+
+### Carregar banco de dados:
+
+diamonds
+?diamonds
+
+### Estabelecer um tema geral para todos os gráficos produzidos:
+
+theme_set(theme_bw())
+
+### Básico
+
