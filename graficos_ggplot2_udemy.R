@@ -391,3 +391,9 @@ df$category <- factor(rep(names(categ_table), categ_table))
 sum(categ_table) # Deve ser igual a 100
 
 view(df) # Com esse data.frame, podemos criar o gráfico.
+
+### Gráfico
+
+ggplot(df) +
+  geom_tile(aes(x = x, y = y, fill = category), 
+            color = "black", size = 0.5) 
