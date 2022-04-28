@@ -327,3 +327,27 @@ theme_set(theme_bw())
 
 ### Básico
 
+diamonds %>% sample_n(250) %>% # Extrai uma amostra de todo conjunto de dados
+  ggplot(aes(x = carat, y = price)) + # Posição dos pontos
+  geom_point(alpha = 0.2) # Argumento alpha altera transparência das bolhas
+
+### Cores
+
+diamonds %>% sample_n(250) %>% 
+  ggplot(aes(x = carat, y = price, color = cut)) + 
+  geom_point(alpha = 0.2) 
+
+### Bolhas
+
+diamonds %>% sample_n(250) %>% 
+  ggplot(aes(x = carat, y = price, color = cut, size = depth)) + 
+  geom_point(alpha = 0.3) +
+  scale_size_continuous(range = c(0.01, 10)) # Estabelece o tamanho mínimo e
+# máximo das bolhas
+
+### Usando outras variáveis
+
+diamonds %>% sample_n(250) %>% 
+  ggplot(aes(x = carat, y = depth, color = cut, size = price)) + 
+  geom_point(alpha = 0.3) +
+  scale_size_continuous(range = c(0.01, 10))
