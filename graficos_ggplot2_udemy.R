@@ -361,3 +361,33 @@ ggplot(iris) +
                   color = Species, size = Petal.Length, shape = Species),
               alpha = 0.5) +
   scale_size_continuous(range = c(0.01, 10))
+
+# Gráfico Waffle ---------------------------------------------------------------------------------------------------------------------------
+
+### Carregar dados sobre carros
+
+mpg
+
+### Escolher uma variável categórica
+
+var <- mpg$class
+var
+
+### Preparação dos dados - Estrutura do data.frame
+
+nrows <- 10 # Número de blocos/linhas
+df <- expand.grid(y = 1:nrows, x = 1:nrows) # Estrutura de 10 x 10
+df
+
+table(var) # Tabulando de maneira simples
+categ_table <- round(table(var) * ((nrows*nrows)/(length(var)))) # Tabulação 
+# dos dados para que a soma das proporções seja igual a 100
+categ_table
+
+### Colocando a variável categórica 'class' no data.frame
+
+df$category <- factor(rep(names(categ_table), categ_table))
+
+sum(categ_table) # Deve ser igual a 100
+
+view(df) # Com esse data.frame, podemos criar o gráfico.
