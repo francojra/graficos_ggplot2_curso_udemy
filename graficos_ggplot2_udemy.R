@@ -397,3 +397,16 @@ view(df) # Com esse data.frame, podemos criar o gráfico.
 ggplot(df) +
   geom_tile(aes(x = x, y = y, fill = category), 
             color = "black", size = 0.5) 
+
+### Gráfico complexo
+
+ggplot(df) +
+  geom_tile(aes(x = x, y = y, fill = category), 
+            color = "black", size = 0.5) +
+  scale_x_continuous(expand = c(0, 0)) + # Corta os extremos/sobras das escalas
+  scale_y_continuous(expand = c(0, 0), trans = "reverse") + # Inverte o eixo y
+  labs(title = "Gráfico Waffle", subtitle = "Tipos de veículos",
+       caption = "Fonte: mpg") +
+  theme(axis.title = element_blank(),
+        axis.text = element_blank(),
+        axis.ticks = element_blank())
