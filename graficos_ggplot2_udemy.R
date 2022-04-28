@@ -351,3 +351,13 @@ diamonds %>% sample_n(250) %>%
   ggplot(aes(x = carat, y = depth, color = cut, size = price)) + 
   geom_point(alpha = 0.3) +
   scale_size_continuous(range = c(0.01, 10))
+
+### Segundo exemplo
+
+iris
+
+ggplot(iris) +
+  geom_jitter(aes(x = Sepal.Length, y = Sepal.Width,
+                  color = Species, size = Petal.Length, shape = Species),
+              alpha = 0.5) +
+  scale_size_continuous(range = c(0.01, 10))
